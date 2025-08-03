@@ -1,5 +1,11 @@
 import { Book, SwapRequest } from "@/interfaces";
 
+//images
+export const IMAGES = {
+  hero: '/assets/images/hero-image.png',
+};
+
+
 // Sample Books
 export const MOCK_BOOKS: Book[] = [
   {

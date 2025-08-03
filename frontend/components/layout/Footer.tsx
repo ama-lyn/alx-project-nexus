@@ -2,21 +2,21 @@ import { FooterLinksProps } from "@/interfaces";
 
 const FooterLinks: React.FC<FooterLinksProps> = ({ links }) => {
   return (
-    <div className=" flex w-[75%] flex-col gap-6 list-none justify-center items-center border-3 border-red-400">
-      <div className="flex w-full shrink-0 space-x-2 justify-around text-xs lg:text-sm border-3 border-red-400">
-        <li>
+    <div className=" flex w-[75%] flex-col gap-6 list-none justify-center items-center">
+      <div className="flex w-full shrink-0 space-x-2 justify-around text-xs lg:text-sm">
+        <li className="cursor-pointer">
           <a href="#"></a>
           {links.first}
         </li>
-        <li>
+        <li className="cursor-pointer">
           <a href="#"></a>
           {links.second}
         </li>
-        <li>
+        <li className="cursor-pointer">
           <a href="#"></a>
           {links.third}
         </li>
-        <li>
+        <li className="cursor-pointer">
           <a href="#"></a>
           {links.fourth}
         </li>
@@ -29,7 +29,7 @@ const FooterLinks: React.FC<FooterLinksProps> = ({ links }) => {
 const Footer: React.FC = () => {
   return (
     <footer className="bg-[#FAFAFA] text-[#4F7096] md:px-8">
-      <div className="flex flex-col justify-center items-center min-h-[10rem] lg:flex-row">
+      <div className="flex flex-col justify-center items-center min-h-[8rem] lg:flex-row">
           <FooterLinks
             links={{
               first: "About",
