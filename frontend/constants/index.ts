@@ -1,13 +1,12 @@
 import { Book, SwapRequest } from "@/interfaces";
 
-//images
+// Images
 export const IMAGES = {
   hero: '/assets/images/hero-image.png',
 };
 
-
 // Sample Books
-export const MOCK_BOOKS: Book[] = [
+export const mockBooks: Book[] = [
   {
     id: "1",
     title: "Atomic Habits",
@@ -15,7 +14,7 @@ export const MOCK_BOOKS: Book[] = [
     description: "A book on small habits that lead to big change.",
     genre: ["Self-help", "Productivity"],
     condition: "like new",
-    imageUrl: "/assets/books/atomic-habits.jpg",
+    imageUrl: "/assets/images/book-atomic-habits.jpg",
     price: 10,
     swapAvailable: true,
     ownerId: "user123",
@@ -28,10 +27,62 @@ export const MOCK_BOOKS: Book[] = [
     description: "A novel about second chances and regrets.",
     genre: ["Fiction", "Fantasy"],
     condition: "used",
-    imageUrl: "/assets/books/midnight-library.jpg",
+    imageUrl: "/assets/images/book-midnight-library.jpg",
     price: 12,
     swapAvailable: false,
     ownerId: "user456",
     postedAt: "2025-07-25T12:00:00Z",
-  }
+  },
+  {
+    id: "3",
+    title: "The Secret Garden",
+    author: "Frances Hodgson Burnett",
+    description: "A classic children’s novel of mystery and healing.",
+    genre: ["Fiction", "Children"],
+    condition: "used",
+    imageUrl: "/assets/images/book-secret-garden.jpg",
+    price: 8,
+    swapAvailable: true,
+    ownerId: "user789",
+    postedAt: "2025-07-28T15:30:00Z",
+  },
+  {
+    id: "4",
+    title: "Pride and Prejudice",
+    author: "Jane Austen",
+    description: "A romantic novel that explores manners and marriage.",
+    genre: ["Classic", "Romance"],
+    condition: "like new",
+    imageUrl: "/assets/images/book-pride-prejudice.jpg",
+    price: 9,
+    swapAvailable: false,
+    ownerId: "user111",
+    postedAt: "2025-07-20T09:00:00Z",
+  },
+  {
+    id: "5",
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    description: "A novel about racial injustice in the Deep South.",
+    genre: ["Classic", "Drama"],
+    condition: "like new",
+    imageUrl: "/assets/images/book-mockingbird.jpg",
+    price: 11,
+    swapAvailable: true,
+    ownerId: "user222",
+    postedAt: "2025-07-22T18:00:00Z",
+  },
+  {
+    id: "6",
+    title: "1984",
+    author: "George Orwell",
+    description: "A dystopian novel on surveillance and control.",
+    genre: ["Dystopian", "Political Fiction"],
+    condition: "used",
+    imageUrl: "/assets/images/book-1984.jpg",
+    price: 7,
+    swapAvailable: true,
+    ownerId: "user333",
+    postedAt: "2025-07-18T14:00:00Z",
+  },
 ];

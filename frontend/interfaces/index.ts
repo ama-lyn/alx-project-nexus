@@ -12,9 +12,11 @@ export interface Book {
     ownerId: string;
     postedAt: string;
   }
+
+export type FeaturedBook = Pick<Book, 'id' | 'title' | 'author' | 'imageUrl'>;
   
   // For Swap Requests
-  export interface SwapRequest {
+export interface SwapRequest {
     id: string;
     requesterId: string;
     requesterBookId: string;

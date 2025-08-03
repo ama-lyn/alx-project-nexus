@@ -1,7 +1,15 @@
 import { IMAGES } from '../constants';
 import Button from '@/components/common/Button';
+import FeaturedBooks from '@/components/landingpage/FeaturedBooks';
+import type { FeaturedBook } from '@/interfaces';
+import { GetStaticProps, NextPage } from 'next/types';
 
-const Home: React.FC = () => {
+interface HomeProps {
+  featuredBooks: FeaturedBook[];
+
+}
+
+const Home: NextPage<HomeProps> = ({ featuredBooks }) => {
   return (
     <div className='flex flex-col max-w-[1200px] mx-auto px-4'>
       <section
@@ -18,8 +26,21 @@ const Home: React.FC = () => {
           <Button label="Browse Books" variant="primary" />
         </div>
       </section>
+      <FeaturedBooks featuredBooks={featuredBooks} />
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  // This URL should be the deployed backend URL in production
+  const res = await fetch('http://localhost:3000/api/books');
+  const featuredBooks: FeaturedBook[] = await res.json();
+
+  return {
+    props: {
+      featuredBooks,
+    },
+  };
 };
 
 export default Home;
