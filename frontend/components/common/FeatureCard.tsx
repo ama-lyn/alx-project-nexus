@@ -1,13 +1,13 @@
 import React from 'react';
 
-export interface BenefitCardProps {
+export interface FeatureCardProps {
   // To allow any React element to be passed as the icon
   icon: React.ReactNode;
   title: string;
   description: string;
 }
 
-const BenefitCard: React.FC<BenefitCardProps> = ({ icon, title, description }) => {
+const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => {
   return (
     <div className="flex flex-col gap-4 rounded-lg border bg-white p-6 text-left">
       <div className="text-[#6b35e8]">
@@ -25,4 +25,4 @@ const BenefitCard: React.FC<BenefitCardProps> = ({ icon, title, description }) =
   );
 };
 
-export default BenefitCard;
+export default FeatureCard;

@@ -1,7 +1,8 @@
 import { IMAGES } from '../constants';
 import Button from '@/components/common/Button';
-import Benefits from '@/components/landingpage/Benefits'
+import HowItWorks from '@/components/landingpage/HowItWorks';
 import FeaturedBooks from '@/components/landingpage/FeaturedBooks';
+import Benefits from '@/components/landingpage/Benefits'
 import type { FeaturedBook } from '@/interfaces';
 import { GetStaticProps, NextPage } from 'next/types';
 
@@ -28,9 +29,11 @@ const Home: NextPage<HomeProps> = ({ featuredBooks }) => {
         </div>
       </section>
 
-      <Benefits/>
+      <HowItWorks/>
 
       <FeaturedBooks featuredBooks={featuredBooks} />
+      
+      <Benefits/>
     </div>
   );
 };

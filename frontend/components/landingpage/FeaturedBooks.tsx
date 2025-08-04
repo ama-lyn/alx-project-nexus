@@ -7,7 +7,7 @@ export interface FeaturedBooksProps {
 
 const FeaturedBooks: React.FC<FeaturedBooksProps> = ({ featuredBooks }) => {
   return (
-    <section className="my-16">
+    <section className="my-14">
       <h2 className="text-3xl font-bold text-center mb-8">Featured Books</h2>
       <div className="flex items-stretch space-x-6 overflow-x-auto pb-4 no-scrollbar">
         {/*
