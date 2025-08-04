@@ -12,9 +12,11 @@ export interface Book {
     ownerId: string;
     postedAt: string;
   }
+
+export type FeaturedBook = Pick<Book, 'id' | 'title' | 'author' | 'imageUrl'>;
   
   // For Swap Requests
-  export interface SwapRequest {
+export interface SwapRequest {
     id: string;
     requesterId: string;
     requesterBookId: string;
@@ -37,7 +39,7 @@ export interface Book {
   // For Reusable Buttons
   export interface ButtonProps {
     label: string;
-    onClick: () => void;
+    onClick?: () => void;
     disabled?: boolean;
     variant?: 'primary' | 'secondary';
     type?: 'submit' | 'button';
