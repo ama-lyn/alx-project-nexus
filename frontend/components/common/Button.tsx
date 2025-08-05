@@ -7,6 +7,7 @@ const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   disabled = false,
   type = 'button',
+  className = '',
 }) => {
   const baseStyles = 'flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 text-sm font-semibold leading-normal tracking-[0.015em]';
   
@@ -26,6 +27,7 @@ const Button: React.FC<ButtonProps> = ({
         ${baseStyles}
         ${variantStyles[variant]}
         ${disabled ? disabledStyles : ''}
+        ${className}
       `}
     >
       {label}

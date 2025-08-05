@@ -43,6 +43,7 @@ export interface SwapRequest {
     disabled?: boolean;
     variant?: 'primary' | 'secondary';
     type?: 'submit' | 'button';
+    className?: string;
   }
   
 // Book Categories

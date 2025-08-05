@@ -1,10 +1,21 @@
 import Link from "next/link";
 import { useState } from "react";
 import Button from "../common/Button";
+import { useSelector } from 'react-redux';
+import { RootState } from '@/redux/store';  
+import { ShoppingCart } from "lucide-react"; 
+import CartPopover from "@/components/cart/CartPopover";
+
 
 const Header: React.FC = () => {
-  // State to control the banner's visibility
   const [isBannerVisible, setIsBannerVisible] = useState(true);
+  // Get the cart items array from the Redux store
+  const cartItems = useSelector((state: RootState) => state.cart.items);
+  // Calculate the total number of items for the badge
+  const totalItems = Array.isArray(cartItems)
+    ? cartItems.reduce((total, item) => total + (item.quantity || 0), 0)
+    : 0;
+  const [isCartVisible, setIsCartVisible] = useState(false);
 
   return (
     <header className="w-full mb-4">
@@ -14,7 +25,6 @@ const Header: React.FC = () => {
           <p className="text-white text-xs md:text-sm lg:font-semibold">
             Black Friday in August Sales
           </p>
-          {/* Close button */}
           <button
             onClick={() => setIsBannerVisible(false)}
             className="absolute right-4 text-white hover:bg-white/20 rounded-full p-1"
@@ -29,13 +39,11 @@ const Header: React.FC = () => {
       {/* Navigation */}
       <nav className="border-b border-gray-200 px-4 md:px-8">
         <div className="flex items-center justify-between py-4">
-          {/* Logo */}
           <div className="flex-shrink-0">
             <img src="/assets/images/logo.png" alt="Logo" className="h-8 w-auto" />
           </div>
 
-          {/* Links + Buttons */}
-          <div className="flex items-center gap-4 flex-wrap">
+          <div className="flex items-center gap-6 flex-wrap">
             <Link href="#">
               <span className="text-sm text-gray-800 hover:text-[#6b35e8]">Browse Books</span>
             </Link>
@@ -45,6 +53,22 @@ const Header: React.FC = () => {
             <Link href="#">
               <span className="text-sm text-gray-800 hover:text-[#6b35e8]">About</span>
             </Link>
+
+              <div 
+              className="relative flex items-center"
+              onMouseEnter={() => setIsCartVisible(true)}
+              onMouseLeave={() => setIsCartVisible(false)}
+            >
+              <Link href="/cart" className="relative p-2">
+                <ShoppingCart className="text-gray-700 hover:text-[#6b35e8]" />
+                {totalItems > 0 && (
+                  <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#710A94] text-xs font-bold text-white">
+                    {totalItems}
+                  </span>
+                )}
+              </Link>
+              {isCartVisible && <CartPopover items={cartItems} />}
+            </div>
 
             <Button label="Sign Up" variant="primary" />
             <Button label="Log In" variant="secondary" />
