@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../../redux/cartSlice';
+import toast from 'react-hot-toast';
 import { Book } from '@/interfaces';
 import Button from '@/components/common/Button';
 import Image from 'next/image';
@@ -14,7 +15,7 @@ const BookPage: NextPage<BookPageProps> = ({ book }) => {
 
   const handleAddToCart = () => {
     dispatch(addItem(book));
-    // trigger the toast notification here
+    toast.success(`${book.title} was added to your cart!`);
   };
 
   if (!book) return <p>Book not found.</p>;
