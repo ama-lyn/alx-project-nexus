@@ -18,6 +18,7 @@ const FeaturedBooks: React.FC<FeaturedBooksProps> = ({ featuredBooks }) => {
         {featuredBooks.slice(0, 5).map((book) => (
           <div key={book.id} className="flex-shrink-0 w-[200px] md:w-[240px]">
             <BookCard
+              id={Number(book.id)}
               title={book.title}
               author={book.author}
               imageUrl={book.imageUrl}

@@ -9,11 +9,18 @@ export interface Book {
     imageUrl: string;
     price: number; // if it's being sold
     swapAvailable: boolean;
-    ownerId: string;
+    owner: Owner;
     postedAt: string;
   }
 
 export type FeaturedBook = Pick<Book, 'id' | 'title' | 'author' | 'imageUrl'>;
+
+export interface Owner {
+  id: string;
+  name: string;
+  avatarUrl: string;
+  joinDate: string; // "Joined 2021"
+}
   
   // For Swap Requests
 export interface SwapRequest {
@@ -43,6 +50,7 @@ export interface SwapRequest {
     disabled?: boolean;
     variant?: 'primary' | 'secondary';
     type?: 'submit' | 'button';
+    className?: string;
   }
   
 // Book Categories

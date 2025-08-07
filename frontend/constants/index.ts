@@ -17,7 +17,12 @@ export const mockBooks: Book[] = [
     imageUrl: "/assets/images/book-atomic-habits.jpg",
     price: 10,
     swapAvailable: true,
-    ownerId: "user123",
+    owner: {
+      id: "user_123",
+      name: "Sophia Clark",
+      avatarUrl: "/assets/images/avatar-sophia.png", 
+      joinDate: "Joined 2021",
+  },
     postedAt: "2025-07-30T10:00:00Z",
   },
   {
@@ -30,7 +35,12 @@ export const mockBooks: Book[] = [
     imageUrl: "/assets/images/book-midnight-library.jpg",
     price: 12,
     swapAvailable: false,
-    ownerId: "user456",
+    owner: {
+      id: "user_123",
+      name: "Sophia Clark",
+      avatarUrl: "/assets/images/avatar-sophia.png", 
+      joinDate: "Joined 2021",
+  },
     postedAt: "2025-07-25T12:00:00Z",
   },
   {
@@ -43,7 +53,12 @@ export const mockBooks: Book[] = [
     imageUrl: "/assets/images/book-secret-garden.jpg",
     price: 8,
     swapAvailable: true,
-    ownerId: "user789",
+    owner: {
+      id: "user_123",
+      name: "Sophia Clark",
+      avatarUrl: "/assets/images/avatar-sophia.png", 
+      joinDate: "Joined 2021",
+  },
     postedAt: "2025-07-28T15:30:00Z",
   },
   {
@@ -56,7 +71,12 @@ export const mockBooks: Book[] = [
     imageUrl: "/assets/images/book-pride-prejudice.jpg",
     price: 9,
     swapAvailable: false,
-    ownerId: "user111",
+    owner: {
+      id: "user_123",
+      name: "Sophia Clark",
+      avatarUrl: "/assets/images/avatar-sophia.png", 
+      joinDate: "Joined 2021",
+  },
     postedAt: "2025-07-20T09:00:00Z",
   },
   {
@@ -69,7 +89,12 @@ export const mockBooks: Book[] = [
     imageUrl: "/assets/images/book-mockingbird.jpg",
     price: 11,
     swapAvailable: true,
-    ownerId: "user222",
+    owner: {
+      id: "user_123",
+      name: "Sophia Clark",
+      avatarUrl: "/assets/images/avatar-sophia.png", 
+      joinDate: "Joined 2021",
+  },
     postedAt: "2025-07-22T18:00:00Z",
   },
   {
@@ -82,7 +107,12 @@ export const mockBooks: Book[] = [
     imageUrl: "/assets/images/book-1984.jpg",
     price: 7,
     swapAvailable: true,
-    ownerId: "user333",
+    owner: {
+      id: "user_123",
+      name: "Sophia Clark",
+      avatarUrl: "/assets/images/avatar-sophia.png", 
+      joinDate: "Joined 2021",
+  },
     postedAt: "2025-07-18T14:00:00Z",
   },
 ];
