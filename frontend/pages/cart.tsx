@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
 import OrderSummary from '@/components/cart/OrderSummary';
@@ -6,9 +6,42 @@ import CartItemRow from '@/components/cart/CartItemRow';
 import EmptyCart from '@/components/cart/EmptyCart';
 import Promotion from '@/components/cart/Promotion';
 import BillingDetails from '@/components/cart/BillingDetails';
+import { validatePromoCode, PromoCode } from '@/lib/promoService';
+import toast from 'react-hot-toast';
 
 const CartPage: React.FC = () => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
+
+  const [promoInput, setPromoInput] = useState('');
+  const [appliedDiscount, setAppliedDiscount] = useState<PromoCode | null>(null);
+  const [promoError, setPromoError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleValidateCode = async () => {
+    if (!promoInput) {
+      setPromoError('Please enter a code.');
+      return;
+    }
+    setIsLoading(true);
+    setPromoError(null);
+    try {
+      const validCode = await validatePromoCode(promoInput);
+      setAppliedDiscount(validCode);
+      toast.success(`Promo code "${validCode.code}" applied!`);
+    } catch (error: any) {
+      setPromoError(error.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleRemoveCode = () => {
+    setAppliedDiscount(null);
+    setPromoInput('');
+    setPromoError(null);
+    toast('Promo code removed.');
+  };
+
   if (cartItems.length === 0) {
     return <EmptyCart />;
   }
@@ -33,13 +66,21 @@ const CartPage: React.FC = () => {
             </div>
           </div>
           
-          <Promotion />
+          <Promotion 
+            inputValue={promoInput}
+            onInputChange={setPromoInput}
+            onValidate={handleValidateCode}
+            onRemove={handleRemoveCode}
+            appliedCode={appliedDiscount}
+            error={promoError}
+            isLoading={isLoading}
+          />
           <BillingDetails />
         </div>
 
         {/* Right*/}
         <div>
-          <OrderSummary items={cartItems} />
+          <OrderSummary items={cartItems} appliedDiscount={appliedDiscount} />
         </div>
 
       </div>
