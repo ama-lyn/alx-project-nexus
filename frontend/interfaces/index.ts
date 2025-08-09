@@ -1,25 +1,24 @@
 // For Book Card or Listing
-export interface Book {
-    id: string;
+  export interface Book {
+    id: string; // SKU or ISBN from the bookstore
     title: string;
     author: string;
     description: string;
-    genre: string[];
-    condition: 'new' | 'like new' | 'used' | 'heavily used';
+    condition: string;
     imageUrl: string;
-    price: number; // if it's being sold
-    swapAvailable: boolean;
-    owner: Owner;
-    postedAt: string;
+    price: number; // Every book has a price
+    isSwappable: boolean; // Can this book be acquired with Swap Credits?
+    isRentable: boolean; // Is this book available for rent?
+    postedAt: string; // When the store listed it
+    tags?: ('Bestseller' | 'New Arrival')[]; 
+    availability: 'In Stock' | 'Out of Stock';
+    genre: string[];
   }
 
 export type FeaturedBook = Pick<Book, 'id' | 'title' | 'author' | 'imageUrl'>;
 
-export interface Owner {
-  id: string;
-  name: string;
-  avatarUrl: string;
-  joinDate: string; // "Joined 2021"
+export interface CartItem extends Book {
+  quantity: number;
 }
   
   // For Swap Requests
@@ -50,7 +49,9 @@ export interface SwapRequest {
     disabled?: boolean;
     variant?: 'primary' | 'secondary';
     type?: 'submit' | 'button';
-    className?: string;
+    className?: string;  
+    icon?: React.ReactNode;
+
   }
   
 // Book Categories

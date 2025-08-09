@@ -24,9 +24,9 @@ const benefits = [
 const Benefits: React.FC = () => {
   return (
     <section className="my-14 text-center">
-      <h2 className="text-3xl font-bold mb-4">Why Choose Zelia?</h2>
+      <h2 className="text-3xl font-bold mb-4">Why Choose The Circuit?</h2>
       <p className="max-w-2xl mx-auto text-gray-600 mb-12">
-        Zelia offers a unique platform for book lovers. Here are some reasons to choose Zelia.
+        The Circuit offers a unique platform for book lovers. Here are some reasons to choose The Circuit.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

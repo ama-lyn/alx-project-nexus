@@ -24,9 +24,9 @@ const steps = [
 const HowItWorks: React.FC = () => {
   return (
     <section className="my-14 text-center">
-      <h2 className="text-3xl font-bold mb-4">How Zelia Works</h2>
+      <h2 className="text-3xl font-bold mb-4">How The Circuit Works</h2>
       <p className="max-w-2xl mx-auto text-gray-600 mb-12">
-        Zelia makes it easy to buy, sell, and swap books. Here's how you can get started:
+        The Circuit makes it easy to buy, sell, and swap books. Here's how you can get started:
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {steps.map((step) => (

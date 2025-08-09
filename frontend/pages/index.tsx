@@ -31,6 +31,7 @@ const Home: NextPage<HomeProps> = ({ featuredBooks }) => {
 
       <HowItWorks/>
 
+      <h2 className="text-3xl font-bold text-center mb-8">Featured Books</h2>
       <FeaturedBooks featuredBooks={featuredBooks} />
 
       <Benefits/>
