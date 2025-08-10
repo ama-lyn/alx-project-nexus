@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
 import { CartItem, removeItem } from '@/redux/cartSlice';
-import { Trash2, Edit3 } from 'lucide-react';
+import { Trash2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 interface CartItemRowProps {

@@ -37,7 +37,7 @@ const LoginPage: NextPageWithLayout = () => {
           <Image src="/assets/logos/Logo.png" alt="The Circuit Logo" width={180} height={45} className="mx-auto mb-8"/>
           </Link>
             <blockquote className="text-xl italic font-semibold">
-              "A reader lives a thousand lives before he dies . . . The man who never reads lives only one."
+              &quot;A reader lives a thousand lives before he dies . . . The man who never reads lives only one.&quot;
             </blockquote>
             <p className="mt-4 font-bold">- George R.R. Martin</p>
         </div>

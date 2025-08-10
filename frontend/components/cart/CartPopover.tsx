@@ -21,7 +21,7 @@ const CartPopover: React.FC<CartPopoverProps> = ({ items }) => {
         <div className="text-center p-4">
           <div  className='flex flex-col items-center justify-center'>
           <p className="font-semibold text-gray-800 mb-2">This is a bit empty.</p>
-          <p className="text-sm text-gray-600 mb-4">Let's start adding some products to your cart.</p>
+          <p className="text-sm text-gray-600 mb-4">Let&apos;s start adding some products to your cart.</p>
           <Button label="Start Shopping" variant="primary" />
           </div>
           <hr className="my-4" />

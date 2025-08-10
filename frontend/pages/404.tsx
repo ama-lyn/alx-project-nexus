@@ -24,7 +24,7 @@ const Custom404: React.FC = () => {
         Oops! This page is off the shelf.
       </h1>
       <p className="mt-2 text-lg text-gray-600">
-        We searched our catalog, but this page couldn't be found.
+        We searched our catalog, but this page couldn&apos;t be found.
       </p>
 
       <div className="mt-8">

@@ -98,22 +98,24 @@ const BookPage: NextPage<BookPageProps> = ({ book, swapSuggestions }) => {
 
 // --- Data Fetching ---
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch('http://localhost:3000/api/books');
+  const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/books`;
+  const res = await fetch(apiUrl);
   const books: Book[] = await res.json();
   const paths = books.map((book) => ({ params: { id: book.id } }));
   return { paths, fallback: 'blocking' };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/books`;
   const id = params?.id as string;
-  const bookRes = await fetch(`http://localhost:3000/api/books/${id}`);
+  const bookRes = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/books${id}`);
   
   if (!bookRes.ok) {
     return { notFound: true }; // Handle case where book doesn't exist
   }
   const book = await bookRes.json();
   
-  const allBooksRes = await fetch('http://localhost:3000/api/books');
+  const allBooksRes = await fetch(apiUrl);
   const allBooks: FeaturedBook[] = await allBooksRes.json();
   const swapSuggestions = allBooks.filter(b => b.id !== id);
 

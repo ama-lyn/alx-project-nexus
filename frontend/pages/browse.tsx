@@ -119,7 +119,8 @@ const BrowsePage: NextPage<BrowsePageProps> = ({ allBooks }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-    const res = await fetch('http://localhost:3000/api/books');
+    const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/books`;
+    const res = await fetch(apiUrl);
     const allBooks: Book[] = await res.json();
     
     return { 

@@ -28,8 +28,12 @@ const CartPage: React.FC = () => {
       const validCode = await validatePromoCode(promoInput);
       setAppliedDiscount(validCode);
       toast.success(`Promo code "${validCode.code}" applied!`);
-    } catch (error: any) {
-      setPromoError(error.message);
+    } catch (error) {
+      if (error instanceof Error) {
+        setPromoError(error.message);
+      } else {
+        setPromoError('An unknown error occurred.');
+      }
     } finally {
       setIsLoading(false);
     }

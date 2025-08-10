@@ -7,6 +7,7 @@ import { ShoppingCart } from "lucide-react";
 import CartPopover from "@/components/cart/CartPopover";
 import { logout } from '@/redux/authSlice';
 import PromoBanner from "../common/PromoBanner";
+import Image from 'next/image';
 
 
 const Header: React.FC = () => {
@@ -45,7 +46,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between py-4">
           <div className="flex-shrink-0">
             <Link href='/' className="cursor-pointer">
-            <img src="/assets/logos/Logo.png" alt="Logo" className="h-12 w-[100px]" />
+            <Image src="/assets/logos/Logo.png" alt="Logo" className="h-12 w-[100px]"/>
             </Link>
           </div>
 

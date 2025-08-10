@@ -39,7 +39,7 @@ const SignUpPage: NextPageWithLayout = () => {
           <Image src="/assets/logos/Logo.png" alt="The Circuit Logo" width={180} height={45} className="mx-auto mb-8"/>
           </Link>
             <blockquote className="text-xl italic font-semibold">
-              "That is part of the beauty of all literature. You discover that your longings are universal longings, that you're not lonely and isolated from anyone. You belong."
+              &quot;That is part of the beauty of all literature. You discover that your longings are universal longings, that you&apos;re not lonely and isolated from anyone. You belong.&quot;
             </blockquote>
             <p className="mt-4 font-bold text-gray-800">- F. Scott Fitzgerald</p>
         </div>
