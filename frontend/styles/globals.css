@@ -50,6 +50,22 @@
   scrollbar-width: none; /* Firefox */
 }
 
+@keyframes search-magnify {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -60%) scale(1.05);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.animate-search-magnify {
+  animation: search-magnify 2.5s ease-in-out infinite;
+}
+
 :root {
   --font-quicksand: 'Quicksand', sans-serif;
   --background: oklch(1 0 0);

@@ -1,11 +1,26 @@
 import { Provider } from 'react-redux';
-import { store } from '../redux/store';
+import { store, persistor } from '../redux/store';
 import "@/styles/globals.css";
 import Layout from "@/components/layout/Layout";
 import type { AppProps } from "next/app";
 import Head from "next/head"
+import { PersistGate } from 'redux-persist/integration/react'; 
+import type { NextPage } from 'next';
+import type { ReactElement, ReactNode } from 'react';
 
-export default function App({ Component, pageProps }: AppProps) {
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+
+export default function App ({ Component, pageProps }: AppPropsWithLayout) {
+
+  const getLayout = Component.getLayout ?? ((page) => <Layout>{page}</Layout>);
+
   return (
   <>
   <Head>
@@ -19,9 +34,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <link rel="icon" href="/favicon.ico" />
   </Head>
   <Provider store={store}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <PersistGate loading={null} persistor={persistor}> 
+       {getLayout(<Component {...pageProps} />)}
+      </PersistGate>
     </Provider>
 </>
   );

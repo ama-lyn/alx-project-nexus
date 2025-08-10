@@ -26,9 +26,13 @@ const CartPopover: React.FC<CartPopoverProps> = ({ items }) => {
           </div>
           <hr className="my-4" />
           <p className="text-sm text-gray-600 mb-4">Sign in to see items you may have added previously.</p>
-          <div className="flex gap-2">
+          <div className="flex gap-2 items-center justify-center">
+          <Link href='/login' className='cursor-pointer'>
             <Button label="Sign In" variant="primary" className="flex-1" />
+          </Link>
+          <Link href='/login' className='cursor-pointer'>
             <Button label="Create Account" variant="secondary" className="flex-1" />
+          </Link>
           </div>
         </div>
       )}

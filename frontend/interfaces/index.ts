@@ -40,6 +40,7 @@ export interface SwapRequest {
     avatarUrl?: string;
     location: string;
     bio?: string;
+    swapCreditBalance: number;
   }
   
   // For Reusable Buttons

@@ -1,13 +1,17 @@
 import Link from "next/link";
 import { useState } from "react";
 import Button from "../common/Button";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch  } from 'react-redux';
 import { RootState } from '@/redux/store';  
 import { ShoppingCart } from "lucide-react"; 
 import CartPopover from "@/components/cart/CartPopover";
+import { logout } from '@/redux/authSlice';
 
 
 const Header: React.FC = () => {
+  const dispatch = useDispatch();
+  const { isAuthenticated, user } = useSelector((state: RootState) => state.auth);
+
   const [isBannerVisible, setIsBannerVisible] = useState(true);
   // Get the cart items array from the Redux store
   const cartItems = useSelector((state: RootState) => state.cart.items);
@@ -16,6 +20,10 @@ const Header: React.FC = () => {
     ? cartItems.reduce((total, item) => total + (item.quantity || 0), 0)
     : 0;
   const [isCartVisible, setIsCartVisible] = useState(false);
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
 
   return (
     <header className="w-full mb-4">
@@ -71,9 +79,17 @@ const Header: React.FC = () => {
               </Link>
               {isCartVisible && <CartPopover items={cartItems} />}
             </div>
-
-            <Button label="Sign Up" variant="primary" />
-            <Button label="Log In" variant="secondary" />
+            {isAuthenticated ? (
+              <div className="flex items-center gap-4">
+                <span className="text-sm font-medium">Hi, {user?.name}</span>
+                <Button label="Log Out" variant="secondary" onClick={handleLogout} />
+              </div>
+            ) : (
+              <div className="flex items-center gap-2">
+                <Link href="/signup"><Button label="Sign Up" variant="primary" /></Link>
+                <Link href="/login"><Button label="Log In" variant="secondary" /></Link>
+              </div>
+            )}
           </div>
         </div>
       </nav>
