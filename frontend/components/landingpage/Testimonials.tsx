@@ -59,7 +59,7 @@ const Testimonials: React.FC = () => {
                   />
                 ))}
               </div>
-              <p className="text-gray-700 italic">"{testimonial.quote}"</p>
+              <p className="text-gray-700 italic">&quot;{testimonial.quote}&quot;</p>
               <div className="flex items-center mt-4">
                 <Image
                   src={testimonial.avatarUrl}
