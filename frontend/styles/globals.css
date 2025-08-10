@@ -66,6 +66,25 @@
   animation: search-magnify 2.5s ease-in-out infinite;
 }
 
+/*Testimonials*/
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.group:hover .animate-marquee,
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 :root {
   --font-quicksand: 'Quicksand', sans-serif;
   --background: oklch(1 0 0);

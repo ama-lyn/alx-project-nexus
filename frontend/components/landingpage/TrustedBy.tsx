@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Testimonials from './Testimonials';
 
 const universities = [
   { 
@@ -37,7 +38,8 @@ const universities = [
 const TrustedBy: React.FC = () => {
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-screen-xl mx-auto px-4 md:px-8">
+      <Testimonials/>
+      <div className="max-w-screen-xl mx-auto px-8 md:px-8">
         <h3 className="text-center text-sm text-gray-500 font-semibold tracking-wider">
           JOINED BY STUDENTS FROM UNIVERSITIES ACROSS AFRICA
         </h3>
