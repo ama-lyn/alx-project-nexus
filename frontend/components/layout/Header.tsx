@@ -6,6 +6,7 @@ import { RootState } from '@/redux/store';
 import { ShoppingCart } from "lucide-react"; 
 import CartPopover from "@/components/cart/CartPopover";
 import { logout } from '@/redux/authSlice';
+import PromoBanner from "../common/PromoBanner";
 
 
 const Header: React.FC = () => {
@@ -25,24 +26,19 @@ const Header: React.FC = () => {
     dispatch(logout());
   };
 
+  const promoCode = "SAVE10";
+  const expiryDate = new Date();
+  expiryDate.setDate(expiryDate.getDate() + 3); // 3 days from now 
+
+
   return (
     <header className="w-full mb-4">
-      {/* Top banner*/}
-      {isBannerVisible && (
-        <div className="relative flex justify-center items-center bg-[#710A94] min-h-[50px] mb-2 px-4 md:px-8 py-2">
-          <p className="text-white text-xs md:text-sm lg:font-semibold">
-            Black Friday in August Sales
-          </p>
-          <button
-            onClick={() => setIsBannerVisible(false)}
-            className="absolute right-4 text-white hover:bg-white/20 rounded-full p-1"
-            aria-label="Dismiss banner"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
+       {isBannerVisible && (
+        <PromoBanner 
+          promoCode={promoCode}
+          expiryDate={expiryDate}
+          onClose={() => setIsBannerVisible(false)} 
+        />
       )}
       {/* Navigation */}
       <nav className="border-b border-gray-200 px-4 md:px-8">

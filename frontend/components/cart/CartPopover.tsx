@@ -60,12 +60,9 @@ const CartPopover: React.FC<CartPopoverProps> = ({ items }) => {
             <span>KSh {total.toFixed(2)}</span>
           </div>
           <div className="flex flex-col gap-2 mt-4">
-            <Button
-              label="Proceed to Checkout"
-              variant="primary"
-              className="w-full"
-            />
-            <Button label="View cart" variant="secondary" className="w-full" />
+            <Link href='/cart' className='cursor-pointer'><Button label="Proceed to Checkout" variant="primary" className="w-full"/></Link>
+            <Link href='/cart' className='cursor-pointer'>  <Button label="View cart" variant="secondary" className="w-full" /> </Link>
+
           </div>
         </>
       )}
