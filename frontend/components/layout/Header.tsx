@@ -40,7 +40,9 @@ const Header: React.FC = () => {
       <nav className="border-b border-gray-200 px-4 md:px-8">
         <div className="flex items-center justify-between py-4">
           <div className="flex-shrink-0">
-            <img src="/assets/images/logo.png" alt="Logo" className="h-8 w-auto" />
+            <Link href='/' className="cursor-pointer">
+            <img src="/assets/logos/Logo.png" alt="Logo" className="h-12 w-[100px]" />
+            </Link>
           </div>
 
           <div className="flex items-center gap-6 flex-wrap">

@@ -1,7 +1,6 @@
 import React from 'react';
 
 export interface FeatureCardProps {
-  // To allow any React element to be passed as the icon
   icon: React.ReactNode;
   title: string;
   description: string;
