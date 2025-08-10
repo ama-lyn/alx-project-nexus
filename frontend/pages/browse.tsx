@@ -3,9 +3,10 @@ import { Book } from '@/interfaces';
 import BookCard from '@/components/common/BookCard';
 import { Search } from 'lucide-react';
 import React, { useState, useMemo } from 'react';
+import { mockBooks } from '@/constants';
 
 interface BrowsePageProps {
-  allBooks: Book[];
+    allBooks: Book[];
 }
 
 const BrowsePage: NextPage<BrowsePageProps> = ({ allBooks }) => {
@@ -119,13 +120,14 @@ const BrowsePage: NextPage<BrowsePageProps> = ({ allBooks }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-    const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/books`;
-    const res = await fetch(apiUrl);
-    const allBooks: Book[] = await res.json();
+    // const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/books`;
+    // const res = await fetch(apiUrl);
+    // const allBooks: Book[] = await res.json();
+
     
     return { 
       props: { 
-        allBooks,
+        allBooks: mockBooks,
       },
       revalidate: 60, 
     };

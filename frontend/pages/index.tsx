@@ -7,7 +7,8 @@ import type { FeaturedBook } from '@/interfaces';
 import JoinToday from '@/components/landingpage/JoinToday';
 import TrustedBy from '@/components/landingpage/TrustedBy'
 import { GetStaticProps, NextPage } from 'next/types';
-import Link from 'next/link'
+import Link from 'next/link';
+import { mockBooks } from '@/constants';
 
 interface HomeProps {
   featuredBooks: FeaturedBook[];
@@ -47,9 +48,16 @@ const Home: NextPage<HomeProps> = ({ featuredBooks }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   // This URL should be the deployed backend URL in production
-  const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/books`;
-  const res = await fetch(apiUrl);
-  const featuredBooks: FeaturedBook[] = await res.json();
+ // const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/books`;
+// const res = await fetch(apiUrl);
+const featuredBooks: FeaturedBook[] = mockBooks.map(
+  ({ id, title, author, imageUrl }) => ({
+    id,
+    title,
+    author,
+    imageUrl,
+  })
+);
 
   return {
     props: {

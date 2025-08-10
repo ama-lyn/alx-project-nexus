@@ -9,6 +9,7 @@ import Button from '@/components/common/Button';
 import Tag from '@/components/common/Tag';
 import FeaturedBooks from '@/components/landingpage/FeaturedBooks';
 import { ShoppingCart, ArrowRightLeft, CalendarClock } from 'lucide-react';
+import { mockBooks } from '@/constants';
 
 interface BookPageProps {
   book: Book;
@@ -98,26 +99,37 @@ const BookPage: NextPage<BookPageProps> = ({ book, swapSuggestions }) => {
 
 // --- Data Fetching ---
 export const getStaticPaths: GetStaticPaths = async () => {
-  const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/books`;
-  const res = await fetch(apiUrl);
-  const books: Book[] = await res.json();
-  const paths = books.map((book) => ({ params: { id: book.id } }));
+  // const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/books`;
+  // const res = await fetch(apiUrl);
+  // const books: Book[] = await res.json();
+  const paths = mockBooks.map((book) => ({ params: { id: book.id } }));
   return { paths, fallback: 'blocking' };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/books`;
   const id = params?.id as string;
-  const bookRes = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/books${id}`);
+  // const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/books`;
+  // const id = params?.id as string;
+  // const bookRes = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/books${id}`);
   
-  if (!bookRes.ok) {
-    return { notFound: true }; // Handle case where book doesn't exist
+  // if (!bookRes.ok) {
+  //  return { notFound: true }; // Handle case where book doesn't exist
+  // }
+
+  const book = mockBooks.find(b => b.id === id);
+  
+  // Handle case where book is not found
+  if (!book) {
+    return { notFound: true };
   }
-  const book = await bookRes.json();
   
-  const allBooksRes = await fetch(apiUrl);
-  const allBooks: FeaturedBook[] = await allBooksRes.json();
-  const swapSuggestions = allBooks.filter(b => b.id !== id);
+  // const allBooksRes = await fetch(apiUrl);
+  // const allBooks: FeaturedBook[] = await allBooksRes.json();
+  // const swapSuggestions = allBooks.filter(b => b.id !== id);
+  // Get swap suggestions by filtering the main array
+  const swapSuggestions = mockBooks
+    .filter(b => b.id !== id)
+    .map(({ id, title, author, imageUrl }) => ({ id, title, author, imageUrl })); // Ensure it matches FeaturedBook type
 
   return { 
     props: { 

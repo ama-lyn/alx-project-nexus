@@ -46,7 +46,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between py-4">
           <div className="flex-shrink-0">
             <Link href='/' className="cursor-pointer">
-            <Image src="/assets/logos/Logo.png" alt="Logo" className="h-12 w-[100px]"/>
+            <Image src="/assets/logos/Logo.png" alt="Logo" width={100} height={60} />
             </Link>
           </div>
 
