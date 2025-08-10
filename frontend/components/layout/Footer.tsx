@@ -1,4 +1,5 @@
 import { FooterLinksProps } from "@/interfaces";
+import Link from 'next/link';
 
 const FooterLinks: React.FC<FooterLinksProps> = ({ links }) => {
   return (
