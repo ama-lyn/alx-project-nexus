@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link'
 
 interface BookCardProps {
-  id: number;
+  id: string;
   imageUrl: string;
   title: string;
   author: string;

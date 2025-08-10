@@ -54,7 +54,7 @@ const Header: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-6 flex-wrap">
-            <Link href="#">
+            <Link href="/browse">
               <span className="text-sm text-gray-800 hover:text-[#6b35e8]">Browse Books</span>
             </Link>
             <Link href="#">

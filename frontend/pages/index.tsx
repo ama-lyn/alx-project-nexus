@@ -7,6 +7,7 @@ import type { FeaturedBook } from '@/interfaces';
 import JoinToday from '@/components/landingpage/JoinToday';
 import TrustedBy from '@/components/landingpage/TrustedBy'
 import { GetStaticProps, NextPage } from 'next/types';
+import Link from 'next/link'
 
 interface HomeProps {
   featuredBooks: FeaturedBook[];
@@ -25,7 +26,8 @@ const Home: NextPage<HomeProps> = ({ featuredBooks }) => {
         <div className='flex flex-col items-center justify-center text-white text-center h-full gap-6'>
           <p className='text-4xl md:text-6xl font-semibold'>Your Next Chapter Starts Here</p>
           <p className='text-lg md:text-2xl max-w-3xl'> Buy, sell, or swap books with fellow students and readers. Find your next great read or give your old books a new home.</p>
-          <Button label="Browse Books" variant="primary" />
+          <Link href='/browse' className='cursor-pointer'> <Button label="Browse Books" variant="primary" /> </Link>
+         
         </div>
       </section>
 
