@@ -45,9 +45,8 @@ const Home: NextPage<HomeProps> = ({ featuredBooks }) => {
 
       <div className='flex flex-col max-w-[1200px] mx-auto px-4'> 
         <TrustedBy/>
-         <JoinToday/>
       </div>
-      
+      <JoinToday/>
     
     </main>
     

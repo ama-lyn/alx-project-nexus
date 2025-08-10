@@ -28,7 +28,7 @@ const FooterLinks: React.FC<FooterLinksProps> = ({ links }) => {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#FAFAFA] text-[#4F7096] md:px-8">
+    <footer className="bg-[#F2F2F7 text-[#4B4B6A] md:px-8">
       <div className="flex flex-col justify-center items-center min-h-[8rem] lg:flex-row">
           <FooterLinks
             links={{
