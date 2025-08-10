@@ -22,7 +22,7 @@ const LoginPage: NextPageWithLayout = () => {
     };
     dispatch(login(mockUser));
 
-    router.push('/dashboard');
+    router.push('/browse');
   };
 
   return (

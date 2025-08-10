@@ -26,7 +26,7 @@ const SignUpPage: NextPageWithLayout = () => {
       swapCreditBalance: 0,
     };
     dispatch(login(newMockUser));
-    router.push('/dashboard');
+    router.push('/browse');
   };
 
   return (

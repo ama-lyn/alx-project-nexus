@@ -21,7 +21,9 @@ const FooterLinks: React.FC<FooterLinksProps> = ({ links }) => {
           {links.fourth}
         </li>
       </div>
-      <p className="text-sm lg:text-md font-semibold"> © 2025 The Circuit. All rights reserved.</p>
+      <p className="text-sm lg:text-md font-semibold"> © 2025 The Circuit. 
+        <span> <Link href='https://www.linkedin.com/in/amanda-your-go-to-webdeveloper'>Gwendolyn Amanda</Link> </span> {' '}
+        All rights reserved.</p>
     </div>
   );
 };
