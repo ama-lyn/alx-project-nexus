@@ -17,7 +17,8 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ featuredBooks }) => {
   return (
-    <div className='flex flex-col max-w-[1200px] mx-auto px-4'>
+    <main>
+      <div className='flex flex-col max-w-[1200px] mx-auto px-4'>
       <section
         style={{
           backgroundImage: ` url(${IMAGES.hero})`,
@@ -31,18 +32,24 @@ const Home: NextPage<HomeProps> = ({ featuredBooks }) => {
          
         </div>
       </section>
+      </div>
 
-      <HowItWorks/>
+      <div className='flex flex-col max-w-[1200px] mx-auto px-4'>
+        <HowItWorks/>
 
-      <h2 className="text-3xl font-bold text-center mb-8">Featured Books</h2>
-      <FeaturedBooks featuredBooks={featuredBooks} />
-
+        <h2 className="text-3xl font-bold text-center mb-8">Featured Books</h2>
+        <FeaturedBooks featuredBooks={featuredBooks} />
+      </div>
+      
       <Benefits/>
 
-      <TrustedBy/>
-
+      <div className='flex flex-col max-w-[1200px] mx-auto px-4'> 
+        <TrustedBy/>
+      </div>
       <JoinToday/>
-    </div>
+    
+    </main>
+    
   );
 };
 

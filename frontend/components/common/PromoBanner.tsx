@@ -39,7 +39,7 @@ const PromoBanner: React.FC<PromoBannerProps> = ({ promoCode, expiryDate, onClos
   }, [expiryDate]);
 
   return (
-    <div className="relative flex flex-wrap justify-center items-center gap-x-4 gap-y-2 bg-[#710A94] min-h-[50px] mb-2 px-12 md:px-8 py-2 text-white">
+    <div className="relative flex flex-wrap justify-center items-center gap-x-4 gap-y-2 bg-[#FF4D8D] min-h-[50px] mb-2 px-12 md:px-8 py-2 text-white">
       <p className="text-xs md:text-sm lg:font-semibold">
         Special Offer! Use code <strong className="bg-white/20 px-2 py-1 rounded">{promoCode}</strong> for 10% off your next purchase.
       </p>
