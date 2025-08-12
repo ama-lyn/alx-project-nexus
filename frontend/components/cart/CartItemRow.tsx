@@ -28,7 +28,7 @@ const CartItemRow: React.FC<CartItemRowProps> = ({ item }) => {
       </div>
       <div className="flex items-center gap-4">
         <span className="font-semibold">KSh {item.price.toFixed(2)}</span>
-        <button className="text-gray-400 hover:text-red-500" onClick={handleRemove}>
+        <button className="text-gray-400 hover:text-red-500 cursor-pointer" onClick={handleRemove}>
           <Trash2 size={18} />
         </button>
       </div>
