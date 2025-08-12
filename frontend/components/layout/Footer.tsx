@@ -1,5 +1,4 @@
 import { FooterLinksProps } from "@/interfaces";
-import Link from 'next/link';
 
 const FooterLinks: React.FC<FooterLinksProps> = ({ links }) => {
   return (
@@ -23,7 +22,8 @@ const FooterLinks: React.FC<FooterLinksProps> = ({ links }) => {
         </li>
       </div>
       <p className="text-sm lg:text-md font-semibold"> © 2025 The Circuit. 
-        <span> <Link href='https://www.linkedin.com/in/amanda-your-go-to-webdeveloper'>Gwendolyn Amanda</Link> </span> {' '}
+        <span> <a href="https://www.linkedin.com/in/amanda-your-go-to-webdeveloper" target="_blank" rel="noopener noreferrer"> Gwendolyn Amanda</a> 
+        </span> {' '}
         All rights reserved.</p>
     </div>
   );
