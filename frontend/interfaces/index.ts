@@ -20,6 +20,16 @@ export type FeaturedBook = Pick<Book, 'id' | 'title' | 'author' | 'imageUrl'>;
 export interface CartItem extends Book {
   quantity: number;
 }
+
+export interface UserSubmission {
+  id: string;
+  bookTitle: string;
+  status: 'Pending Inspection' | 'Accepted' | 'Rejected';
+  submittedDate: string;
+  creditValue?: number; // Value in Swap Credits if accepted
+  payoutValue?: number; // Payout in cash if accepted
+  rejectionReason?: string; // Reason if rejected
+}
   
   // For Swap Requests
 export interface SwapRequest {

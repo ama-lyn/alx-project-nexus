@@ -1,9 +1,46 @@
 import { Book, SwapRequest } from "@/interfaces";
+import { UserSubmission } from '@/interfaces'
 
 // Images
 export const IMAGES = {
   hero: '/assets/images/hero-image.png',
 };
+
+export const mockSubmissions: UserSubmission[] = [
+  {
+    id: 'sub_001',
+    bookTitle: 'The Great Gatsby',
+    status: 'Pending Inspection',
+    submittedDate: '2025-08-10T10:00:00Z',
+  },
+  {
+    id: 'sub_002',
+    bookTitle: 'Deep Work',
+    status: 'Pending Inspection',
+    submittedDate: '2025-08-09T14:30:00Z',
+  },
+  {
+    id: 'sub_003',
+    bookTitle: 'The Midnight Library',
+    status: 'Accepted',
+    submittedDate: '2025-08-05T11:00:00Z',
+    creditValue: 850,
+  },
+  {
+    id: 'sub_004',
+    bookTitle: 'Pride and Prejudice',
+    status: 'Rejected',
+    submittedDate: '2025-08-04T09:00:00Z',
+    rejectionReason: 'Water damage on cover',
+  },
+  {
+    id: 'sub_005',
+    bookTitle: 'The Design of Everyday Things',
+    status: 'Accepted',
+    submittedDate: '2025-08-01T16:20:00Z',
+    payoutValue: 1100,
+  },
+];
 
 // Sample Books
 export const mockBooks: Book[] = [
