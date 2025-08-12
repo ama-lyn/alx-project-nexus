@@ -20,7 +20,33 @@ export type FeaturedBook = Pick<Book, 'id' | 'title' | 'author' | 'imageUrl'>;
 export interface CartItem extends Book {
   quantity: number;
 }
-  
+
+export interface UserSubmission {
+  id: string;
+  bookTitle: string;
+  status: 'Pending Inspection' | 'Accepted' | 'Rejected';
+  submittedDate: string;
+  creditValue?: number; // Value in Swap Credits if accepted
+  payoutValue?: number; // Payout in cash if accepted
+  rejectionReason?: string; // Reason if rejected
+}
+export interface UserRental {
+  id: string;
+  bookTitle: string;
+  imageUrl: string;
+  rentalDate: string;
+  returnDate: string;
+  status: 'Rented' | 'Returned' | 'Overdue';
+}
+
+export interface UserMessage {
+  id: string;
+  subject: string;
+  lastMessage: string;
+  lastMessageDate: string;
+  isRead: boolean;
+  relatedTo?: string; // e.g., "Order #TC1234"
+} 
   // For Swap Requests
 export interface SwapRequest {
     id: string;

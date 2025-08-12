@@ -18,7 +18,7 @@ const testimonials = [
       rating: 5,
     },
     {
-      quote: "I love how I can just browse the entire store&apos;s inventory online instead of having to visit. Found a rare book I needed for my dissertation. Highly recommend!",
+      quote: "I love how I can just browse the entire store's inventory online instead of having to visit. Found a rare book I needed for my dissertation. Highly recommend!",
       name: 'Chidinma Adebayo',
       university: 'University of Lagos',
       avatarUrl: '/assets/avatars/chidinma.jpg',
