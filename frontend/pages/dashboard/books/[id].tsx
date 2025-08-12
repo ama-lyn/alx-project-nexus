@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { useDispatch } from 'react-redux';
 import { addItem } from '@/redux/cartSlice';
 import toast from 'react-hot-toast';

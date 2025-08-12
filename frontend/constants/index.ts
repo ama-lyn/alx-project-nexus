@@ -1,5 +1,4 @@
-import { Book, SwapRequest } from "@/interfaces";
-import { UserSubmission } from '@/interfaces'
+import { Book, SwapRequest, UserSubmission , UserRental, UserMessage} from "@/interfaces";
 
 // Images
 export const IMAGES = {
@@ -39,6 +38,58 @@ export const mockSubmissions: UserSubmission[] = [
     status: 'Accepted',
     submittedDate: '2025-08-01T16:20:00Z',
     payoutValue: 1100,
+  },
+];
+
+export const mockRentals: UserRental[] = [
+  {
+    id: 'rent_001',
+    bookTitle: 'The Lean Startup',
+    imageUrl: '/assets/images/book-lean-startup.jpg',
+    rentalDate: '2025-07-15T10:00:00Z',
+    returnDate: '2025-08-15T10:00:00Z',
+    status: 'Rented',
+  },
+  {
+    id: 'rent_002',
+    bookTitle: 'Clean Code',
+    imageUrl: '/assets/images/book-clean-code.webp',
+    rentalDate: '2025-07-01T11:30:00Z',
+    returnDate: '2025-08-01T11:30:00Z',
+    status: 'Overdue',
+  },
+  {
+    id: 'rent_003',
+    bookTitle: 'The Design of Everyday Things',
+    imageUrl: '/assets/images/book-design-of-everyday-things.webp',
+    rentalDate: '2025-05-20T09:00:00Z',
+    returnDate: '2025-06-20T09:00:00Z',
+    status: 'Returned',
+  },
+];
+
+export const mockMessages: UserMessage[] = [
+  {
+    id: 'msg_001',
+    subject: 'Update on your submission for "Pride and Prejudice"',
+    lastMessage: 'Hi Circuit, we have received your book and it is now pending inspection. We will update you shortly.',
+    lastMessageDate: '2025-08-11T09:30:00Z',
+    isRead: false,
+    relatedTo: 'Submission #sub_004'
+  },
+  {
+    id: 'msg_002',
+    subject: 'Your rental is due soon!',
+    lastMessage: 'This is a friendly reminder that your rental for "Clean Code" is due in 3 days. Please see return instructions...',
+    lastMessageDate: '2025-07-29T14:00:00Z',
+    isRead: true,
+  },
+  {
+    id: 'msg_003',
+    subject: 'Welcome to The Circuit!',
+    lastMessage: 'We are thrilled to have you join our community of readers. Let us know if you have any questions!',
+    lastMessageDate: '2025-07-28T10:00:00Z',
+    isRead: true,
   },
 ];
 

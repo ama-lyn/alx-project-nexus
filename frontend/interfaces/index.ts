@@ -30,7 +30,23 @@ export interface UserSubmission {
   payoutValue?: number; // Payout in cash if accepted
   rejectionReason?: string; // Reason if rejected
 }
-  
+export interface UserRental {
+  id: string;
+  bookTitle: string;
+  imageUrl: string;
+  rentalDate: string;
+  returnDate: string;
+  status: 'Rented' | 'Returned' | 'Overdue';
+}
+
+export interface UserMessage {
+  id: string;
+  subject: string;
+  lastMessage: string;
+  lastMessageDate: string;
+  isRead: boolean;
+  relatedTo?: string; // e.g., "Order #TC1234"
+} 
   // For Swap Requests
 export interface SwapRequest {
     id: string;

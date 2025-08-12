@@ -1,4 +1,4 @@
-import { GetStaticProps, NextPage } from 'next';
+import { GetStaticProps } from 'next';
 import { Book } from '@/interfaces';
 import BookCard from '@/components/dashboard/BookCard';
 import { Search } from 'lucide-react';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { GetStaticProps } from 'next';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import type { NextPageWithLayout } from '../_app';
@@ -20,7 +20,7 @@ const Submissions: NextPageWithLayout<SubmissionsPageProps> = ({ submissions }) 
   return (
     <div className='w-full'>
       <h1 className="text-4xl font-bold text-gray-900">My Submissions</h1>
-      <p className="text-[#6b35e8] mt-1">Track the status of books you've submitted to The Circuit.</p>
+      <p className="text-[#6b35e8] mt-1">Track the status of books you&apos;ve submitted to The Circuit.</p>
 
       <div className="mt-8 space-y-10">
         {/* Pending Section */}

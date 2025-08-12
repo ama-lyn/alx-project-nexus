@@ -22,7 +22,7 @@ const Header: React.FC = () => {
     ? cartItems.reduce((total, item) => total + (item.quantity || 0), 0)
     : 0;
   const [isCartVisible, setIsCartVisible] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for the mobile menu
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleLogout = () => {
     dispatch(logout());
