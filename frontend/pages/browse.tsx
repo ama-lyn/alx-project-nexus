@@ -44,7 +44,7 @@ const BrowsePage: NextPage<BrowsePageProps> = ({ allBooks }) => {
   }, [allBooks, activeCategory, searchTerm, activeSort]);
 
 
-  const categories = ['All Categories', 'Fiction', 'Non-Fiction', 'Textbooks', 'Children\'s Books'];
+  const categories = ['All Categories', 'Fiction', 'Business', 'Textbooks', 'Tech'];
   const sortOptions = ['Newest Arrivals', 'Price', 'Condition', 'Popularity'];
   
   return (

@@ -22,7 +22,7 @@ const FooterLinks: React.FC<FooterLinksProps> = ({ links }) => {
         </li>
       </div>
       <p className="text-sm lg:text-md font-semibold"> © 2025 The Circuit. 
-        <span> <a href="https://www.linkedin.com/in/amanda-your-go-to-webdeveloper" target="_blank" rel="noopener noreferrer"> Gwendolyn Amanda</a> 
+        <span> <a href="https://www.linkedin.com/in/amanda-your-go-to-webdeveloper" target="_blank" rel="noopener noreferrer"> Gwendolyn Amanda.</a> 
         </span> {' '}
         All rights reserved.</p>
     </div>
